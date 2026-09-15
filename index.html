@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111725" />
+    <title>Calico Railway - interactive media art</title>
+    <meta name="description" content="A tactile 3D calico cat train: move, listen, orbit, and take it apart." />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="experience">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Calico Railway home"><span class="mark">*</span> CALICO<br />RAILWAY</a>
+        <div class="topbar__middle">AN INTERACTIVE<br />MEDIA ART OBJECT</div>
+        <button class="sound-button" id="soundToggle" aria-pressed="false"><span class="sound-dot"></span> SOUND <span id="soundState">OFF</span></button>
+      </header>
+      <section class="stage" aria-label="Interactive three-dimensional cat train">
+        <div id="canvasHost" aria-label="Drag to rotate the calico cat train"></div>
+        <div class="ambient ambient--one"></div><div class="ambient ambient--two"></div>
+        <div class="stage-copy">
+          <p class="eyebrow">LOCOMOTION STUDY - 01</p>
+          <h1>A very soft<br /><i>way forward.</i></h1>
+          <p class="stage-copy__note">Drag anywhere to turn the train.<br />Every part is awake.</p>
+        </div>
+        <div class="model-label"><span class="model-label__line"></span><span>CALICO<br />LOCOMOTIVE<br /><em id="speedReadout">12 KM/H</em></span></div>
+        <button class="hint" id="hintButton" aria-label="Show interaction hint">DRAG TO EXPLORE <span>-&gt;</span></button>
+      </section>
+      <section class="console" aria-label="Calico Railway controls">
+        <div class="console__intro"><span class="index">01</span><p>Set the pace.<br />Watch the railway<br />wake up.</p></div>
+        <label class="speed-control">SPEED <output id="speedValue">12</output><input id="speed" type="range" min="0" max="80" value="12" aria-label="Train speed" /><span class="range-ends"><span>STILL</span><span>FULL STEAM</span></span></label>
+        <div class="controls-grid">
+          <div class="control-group"><p class="control-title">VIEW</p><div class="segmented" role="group" aria-label="Camera views"><button class="active" data-view="side">SIDE</button><button data-view="front">FRONT</button><button data-view="above">ABOVE</button></div></div>
+          <div class="control-group"><p class="control-title">EXPLORE</p><div class="button-row"><button class="icon-toggle" id="orbitButton" aria-pressed="false"><span>o</span> ORBIT</button><button class="icon-toggle" id="explodeButton" aria-pressed="false"><span>*</span> EXPLODE</button></div></div>
+        </div>
+        <div class="bottom-row">
+          <button class="meow" id="meowButton">MEOW <span>-&gt;</span></button>
+          <p>Click the model and give it a moment.<br />It tends to respond.</p>
+          <div class="credits">DESIGNED AS A<br />LIVING OBJECT</div>
+        </div>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status">The conductor blinks.</div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
